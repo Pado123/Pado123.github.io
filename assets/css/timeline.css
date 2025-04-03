@@ -1,19 +1,18 @@
 /* Import Google Font */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
 
-body {
+#timeline {
   font-family: 'Open Sans', sans-serif;
-  margin: 0;
   padding: 0 4em;
 }
 
-main {
+#timeline main {
   min-width: 300px;
   max-width: 500px;
   margin: auto;
 }
 
-p {
+#timeline p {
   font-size: 1em;
   line-height: 1.75em;
   border-top: 3px solid;
@@ -28,7 +27,7 @@ p {
 }
 
 /* Numbers inside circles */
-p::before {
+#timeline p::before {
   content: counter(section);
   position: absolute;
   border-radius: 50%;
@@ -43,35 +42,33 @@ p::before {
 }
 
 /* Odd-numbered items */
-p:nth-child(odd) {
+#timeline p:nth-child(odd) {
   border-right: 3px solid;
   padding-left: 0;
 }
 
-p:nth-child(odd)::before {
+#timeline p:nth-child(odd)::before {
   left: 100%;
   margin-left: -20px;
 }
 
 /* Even-numbered items */
-p:nth-child(even) {
+#timeline p:nth-child(even) {
   border-left: 3px solid;
   padding-right: 0;
 }
 
-p:nth-child(even)::before {
+#timeline p:nth-child(even)::before {
   right: 100%;
   margin-right: -20px;
 }
 
 /* First and last items */
-p:first-child {
+#timeline p:first-child {
   border-top: 0;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
 }
 
-p:last-child {
+#timeline p:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
