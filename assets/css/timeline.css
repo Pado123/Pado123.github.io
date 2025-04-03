@@ -1,13 +1,8 @@
-//Text Styles 
+/* Import Google Font */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
-$font-sans: 'Open Sans', sans-serif;
-
-//Colors
-$black: #34435E;
-$white: #ffffff;
 
 body {
-  font-family: $font-sans;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0 4em;
 }
@@ -29,50 +24,54 @@ p {
   padding: 40px;
   counter-increment: section;
   position: relative;
-  color: $black;
-  
-  //numbers
-  &:before {
-    content: counter(section);
-    position: absolute;
-    border-radius: 50%;
-    padding: 10px;
-    height: 1.25em;
-    width: 1.25em;
-    background-color: $black;
-    text-align: center;
-    line-height: 1.25em;
-    color: $white;
-    font-size: 1em;
-  }
+  color: #34435E;
 }
-//odd number borders
+
+/* Numbers inside circles */
+p::before {
+  content: counter(section);
+  position: absolute;
+  border-radius: 50%;
+  padding: 10px;
+  height: 1.25em;
+  width: 1.25em;
+  background-color: #34435E;
+  text-align: center;
+  line-height: 1.25em;
+  color: #ffffff;
+  font-size: 1em;
+}
+
+/* Odd-numbered items */
 p:nth-child(odd) {
   border-right: 3px solid;
   padding-left: 0;
-  
-  &:before {
-    left: 100%; 
-    margin-left: -20px;
-  }
 }
-//even number borders
+
+p:nth-child(odd)::before {
+  left: 100%;
+  margin-left: -20px;
+}
+
+/* Even-numbered items */
 p:nth-child(even) {
   border-left: 3px solid;
   padding-right: 0;
-  
-  &:before {
-    right: 100%; 
-    margin-right: -20px;
-  }
 }
-//handle first and last
+
+p:nth-child(even)::before {
+  right: 100%;
+  margin-right: -20px;
+}
+
+/* First and last items */
 p:first-child {
   border-top: 0;
-  border-top-right-radius:0;
-  border-top-left-radius:0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
+
 p:last-child {
-  border-bottom-right-radius:0;
-  border-bottom-left-radius:0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
